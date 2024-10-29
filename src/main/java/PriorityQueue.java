@@ -21,14 +21,18 @@ public class PriorityQueue<T> extends Queue<T>
 		   back = myNode;
 	   } else 
 	   {
-		 //  back.next = myNode;
-		 //  back = myNode;
 		   sort(val, front);
 	   }
    }
    
    private void sort(T insertVal, Node<T> node) 
    {
+	   if (compare.compare(insertVal, front.val) > 0)
+	   {
+		   Node<T> myNode = new Node<T>(insertVal, front);
+		   front = myNode;
+	   }
+	   
 	   if (node.next == null)
 	   {
 		   Node<T> myNode = new Node<T>(insertVal, null);
@@ -36,13 +40,14 @@ public class PriorityQueue<T> extends Queue<T>
 		   back = myNode;
 		   return;
 	   }
-//	   if (insertVal < node.val && insertVal > node.next.val)
+	   
 	   if (compare.compare(insertVal, (T) node.val) < 0 && compare.compare(insertVal, (T) node.next.val) > 0)
 	   {
 		   Node<T> myNode = new Node<T>(insertVal, node.next);
 		   node.next = myNode;
 		   return;
 	   }
+	   
 	   sort(insertVal, node.next);
    }
 
