@@ -31,6 +31,7 @@ public class PriorityQueue<T> extends Queue<T>
 	   {
 		   Node<T> myNode = new Node<T>(insertVal, front);
 		   front = myNode;
+		   return;
 	   }
 	   
 	   if (node.next == null)
