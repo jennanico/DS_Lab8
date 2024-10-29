@@ -107,7 +107,7 @@ class ComparatorTest {
 	
 	@Test
 	void testLoyalPushInsert() {
-		pQueue = new PriorityQueue<Customer>(worthC);
+		pQueue = new PriorityQueue<Customer>(loyalC);
 		
 		pQueue.push(customerB);
 		pQueue.push(customerA);
@@ -119,7 +119,7 @@ class ComparatorTest {
 	
 	@Test
 	void testLoyalPushGreaterThan() {
-		pQueue = new PriorityQueue<Customer>(worthC);
+		pQueue = new PriorityQueue<Customer>(loyalC);
 		
 		pQueue.push(customerD);
 		pQueue.push(customerA);
