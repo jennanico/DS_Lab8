@@ -41,7 +41,7 @@ public class PriorityQueue<T> extends Queue<T>
 		   return;
 	   }
 	   
-	   if (compare.compare(insertVal, (T) node.val) < 0 && compare.compare(insertVal, (T) node.next.val) > 0)
+	   if (compare.compare(insertVal, (T) node.val) < 0 && compare.compare(insertVal, (T) node.next.val) >= 0)
 	   {
 		   Node<T> myNode = new Node<T>(insertVal, node.next);
 		   node.next = myNode;
